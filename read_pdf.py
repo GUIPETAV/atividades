@@ -32,14 +32,15 @@ def read_pdf(pdf_path):
             print(f"PDF has {num_pages} page(s)\n")
             
             # Extract text from all pages
-            full_text = ""
+            text_parts = []
             for page_num in range(num_pages):
                 page = pdf_reader.pages[page_num]
                 text = page.extract_text()
-                full_text += f"\n--- Page {page_num + 1} ---\n"
-                full_text += text
-                full_text += "\n"
+                text_parts.append(f"\n--- Page {page_num + 1} ---\n")
+                text_parts.append(text)
+                text_parts.append("\n")
             
+            full_text = ''.join(text_parts)
             return full_text
             
     except FileNotFoundError:
