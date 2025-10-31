@@ -8,7 +8,7 @@ import sys
 try:
     import PyPDF2
 except ImportError:
-    print("PyPDF2 is not installed. Please install it using: pip install PyPDF2")
+    print("PyPDF2 is not installed. Please install it using: pip install -r requirements.txt")
     sys.exit(1)
 
 
